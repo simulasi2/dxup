@@ -17,12 +17,12 @@ jobs:
       run: sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
     - name: off
       run: pip3 install meson
-#    - name: pparere
-#      run: chmod +x package-release.sh
-#    - name: aaa
-#      run: ./package-release.sh release build --no-package
-    - name: build
-      run: meson --cross-file build-win32.txt --buildtype release --prefix build/dxup-release/ build.w32
+    - name: pparere
+      run: chmod +x package-release.sh
+    - name: aaa
+      run: ./package-release.sh release build --no-package
+#    - name: build
+#      run: meson --cross-file build-win32.txt --buildtype release --prefix build/dxup-release/ build.w32
       
     - uses: actions/upload-artifact@v3
       with:
