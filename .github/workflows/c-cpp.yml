@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "d3d9-dev" ]
+  pull_request:
+    branches: [ "d3d9-dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: ./configure
+    - name
+      run: chmod +x package-release.sh
+      run: ./package-release.sh release build --no-package
+    - uses: actions/upload-artifact@v3
+       with:
+        name: "dxup-${CI_COMMIT_REF_NAME}.${CI_COMMIT_SHA}"
+        path: build/dxup-release # or path/to/artifact
