@@ -27,7 +27,6 @@ function build_arch {
         --buildtype "release"                         \
         --prefix "$DXUP_BUILD_DIR/install.$1"         \
         --strip                                       \
-        -Denable_tests=false                          \
         "$DXUP_BUILD_DIR/build.$1"
 
   cd "$DXUP_BUILD_DIR/build.$1"
