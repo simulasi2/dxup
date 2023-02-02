@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: build
 
 on:
   push:
@@ -15,10 +15,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: configure
       run: ./configure
-    - name
+    - name: pparere
       run: chmod +x package-release.sh
+    - name: aaa
       run: ./package-release.sh release build --no-package
+
     - uses: actions/upload-artifact@v3
-       with:
-        name: "dxup-${CI_COMMIT_REF_NAME}.${CI_COMMIT_SHA}"
-        path: build/dxup-release # or path/to/artifact
+      with:
+       name: "dxup-${CI_COMMIT_REF_NAME}.${CI_COMMIT_SHA}"
+       path: build/dxup-release # or path/to/artifact
